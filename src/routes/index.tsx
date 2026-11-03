@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, ShieldCheck, Lock, Mail, X, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar } from "lucide-react";
+import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck } from "lucide-react";
 import facilitadora from "@/assets/facilitadora.jpeg.asset.json";
 
 const HOTMART_URL = "https://pay.hotmart.com/P108316406G";
@@ -71,7 +71,7 @@ function Cta({ children, className = "" }: { children: React.ReactNode; classNam
   );
 }
 
-function Index() {
+export function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="bg-forest px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground">
@@ -105,7 +105,7 @@ function Index() {
                   alt="Facilitadora do Roteiro do Desarme Mental"
                   width={768}
                   height={1024}
-                  className="h-72 w-72 rounded-full border-8 border-card object-cover shadow-2xl md:h-96 md:w-96 lg:h-[420px] lg:w-[420px]"
+                  className="aspect-square w-72 max-w-full rounded-full border-8 border-card object-cover shadow-2xl md:w-96 lg:w-[420px]"
                 />
                 <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-forest px-4 py-1.5 text-xs font-extrabold tracking-wide text-primary-foreground shadow-lg">
                   Sua facilitadora no Desarme Mental
@@ -186,13 +186,81 @@ function Index() {
         <div className="mx-auto max-w-2xl rounded-3xl bg-forest p-8 text-center text-primary-foreground shadow-2xl md:p-12">
           <p className="text-lg">Mas hoje você não vai pagar nem uma fração desse valor…</p>
           <p className="mt-6 text-sm uppercase tracking-widest opacity-80">Por apenas</p>
-          <p className="font-display text-5xl font-extrabold md:text-6xl">R$ 39,90 à vista (PIX ou cartão)</p>
+           <p className="font-display text-5xl font-extrabold md:text-6xl">R$ 39,90</p>
+           <p className="mt-2 text-lg">à vista (PIX ou cartão)</p>
           <p className="mt-2 text-lg">ou em até <strong>4x de R$ 10,86</strong> no cartão de crédito</p>
           <Cta className="pulse-soft mt-8 w-full">QUERO GARANTIR MEU ACESSO AGORA</Cta>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs font-semibold">
             <span className="flex items-center gap-1"><Lock className="h-4 w-4" /> Compra Segura</span>
             <span className="flex items-center gap-1"><Mail className="h-4 w-4" /> Envio Imediato no E-mail</span>
             <span className="flex items-center gap-1"><ShieldCheck className="h-4 w-4" /> Garantia de 7 Dias</span>
+          </div>
+        </div>
+      </section>
+
+      {/* FACILITADORA */}
+      <section className="bg-forest px-4 py-16 text-primary-foreground">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-8 text-center text-sm font-semibold uppercase">Quem está por trás do método</p>
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
+            <img src={facilitadora.url} alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="mx-auto aspect-[3/4] w-full max-w-md rounded-lg object-cover" />
+            <div className="min-w-0">
+              <h2 className="text-4xl font-extrabold md:text-5xl">Ana Marta</h2>
+              <p className="mt-3 text-lg font-semibold">Facilitadora do Grupo Terapêutico Viver Sem Ansiedade e Autora do Roteiro do Desarme Mental</p>
+              <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Leader Flow</p>
+              <ul className="mt-7 space-y-5">
+                {[
+                  ["Formação com Referências Nacionais", "Dupla certificação em Psicoterapia Positiva com o Dr. Paulo de Tarso e com o Dr. Helder Kamei pelo Instituto Leader Flow."],
+                  ["Domínio de Sabotadores Mentais", "Especialização prática para identificar e desarmar os padrões mentais que sustentam a hipervigilância e a ruminação."],
+                  ["Base na Neurociência Aplicada", "Intervenções estruturadas a partir da resposta neurofisiológica ao estresse crônico."],
+                  ["Prática com Grupos Reais", 'Protocolo validado e refinado no acompanhamento prático do grupo "Viver Sem Ansiedade".'],
+                ].map(([title, description]) => (
+                  <li key={title} className="flex items-start gap-3">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-authority-check" />
+                    <p className="text-sm leading-relaxed"><strong className="block font-extrabold">{title}</strong><span className="text-primary-foreground/80">{description}</span></p>
+                  </li>
+                ))}
+              </ul>
+              <blockquote className="mt-8 rounded-lg border border-primary-foreground/20 bg-authority-surface p-5 font-display text-lg leading-relaxed">
+                “Minha missão é entregar a você ferramentas práticas para que a sua mente volte a ser um lugar de paz, clareza e descanso, desarmando os sabotadores e o ciclo da sobrecarga mental dia após dia.”
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FECHAMENTO FRANCO */}
+      <section className="bg-sage px-4 py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold text-forest md:text-4xl">Olha, vou ser bem direta com você...</h2>
+          <div className="mt-8 space-y-5 text-base leading-relaxed md:text-lg">
+            <p>Se você chegou até aqui, é porque a sobrecarga mental já passou do limite tolerável na sua rotina.</p>
+            <p>Você sabe que não é apenas sobre relaxar ou fazer pausas que não resolvem.<br />É sobre resgatar a sua clareza, silenciar o excesso de ruído mental e ter de volta noites de sono que realmente descansam o corpo e a mente.</p>
+            <p>Você não precisa continuar sustentando um estado de alerta diário que só consome a sua energia. Eu estruturei um caminho seguro, baseado na neurobiologia da ansiedade e em práticas integrativas simples de aplicar.</p>
+            <p className="font-semibold text-forest">Você está pronta para desarmar esse ciclo de sobrecarga mental e recuperar a calma e o foco ao longo dos próximos 21 dias?</p>
+            <p>Se sim, clique no botão abaixo e garanta seu acesso ao Roteiro do Desarme Mental.</p>
+          </div>
+          <Cta className="mt-8">Quero Desarmar Minha Mente Agora</Cta>
+          <p className="mt-4 text-sm text-muted-foreground">Apenas R$ 39,90 à vista ou em até 4x de R$ 10,86 no cartão</p>
+        </div>
+      </section>
+
+      {/* ENTREGA */}
+      <section className="bg-card px-4 py-16">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mx-auto max-w-3xl text-center text-3xl font-extrabold text-forest md:text-4xl">Compre agora e receba seu acesso no e-mail imediatamente!</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              { icon: Mail, title: "ACESSE SEU E-MAIL", description: "Assim que o seu pagamento for confirmado, você receberá um e-mail oficial da Hotmart com as instruções imediatas de acesso." },
+              { icon: FileDown, title: "BAIXE O ROTEIRO COMPLETO", description: "Você recebe o arquivo oficial do Roteiro de 21 Dias, o Protocolo Noturno, o Guia de Intervenção Rápida e as Fichas de Aplicação para começar hoje mesmo." },
+              { icon: CircleCheck, title: "TUDO PRONTO!", description: "Agora é só seguir os passos diários de poucos minutos para desativar a sobrecarga mental e recuperar a sua tranquilidade." },
+            ].map(({ icon: Icon, title, description }, index) => (
+              <div key={title} className="rounded-lg border bg-background p-6">
+                <div className="flex items-center justify-between"><Icon className="h-8 w-8 text-cta" /><span className="font-display text-3xl text-muted-foreground/50">0{index + 1}</span></div>
+                <h3 className="mt-5 font-sans text-base font-extrabold text-forest">{title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

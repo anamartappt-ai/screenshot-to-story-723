@@ -9,3 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 - Leads go to the `leads` table via anon insert-only RLS; no public reads.
+- Keep the sales page sections in the index route and share one checkout CTA so all purchase links remain consistent.

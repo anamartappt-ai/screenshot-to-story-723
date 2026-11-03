@@ -28,6 +28,8 @@
   --color-blush: var(--blush);
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
+  --color-authority-check: var(--authority-check);
+  --color-authority-surface: var(--authority-surface);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -75,6 +77,8 @@
   --background: oklch(0.975 0.01 70);
   --foreground: oklch(0.25 0.04 160);
   --forest: oklch(0.34 0.06 160);
+  --authority-check: oklch(0.82 0.13 155);
+  --authority-surface: oklch(0.99 0 0 / 8%);
   --sage: oklch(0.95 0.04 150);
   --cta: oklch(0.56 0.13 155);
   --cta-foreground: oklch(0.99 0 0);
@@ -114,6 +118,8 @@
 }
 
 .dark {
+  --authority-check: oklch(0.82 0.13 155);
+  --authority-surface: oklch(0.99 0 0 / 8%);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
@@ -172,3 +178,7 @@
 }
 @utility pulse-soft { animation: pulse-soft 2.2s ease-in-out infinite; }
 @keyframes pulse-soft { 0%,100% { transform: scale(1);} 50% { transform: scale(1.03);} }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-soft { animation: none; }
+}
