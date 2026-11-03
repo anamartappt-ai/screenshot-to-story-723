@@ -46,7 +46,7 @@ const entregaveis = [
   ["01", "O Roteiro do Desarme Mental", "Protocolo Prático de 21 Dias: o núcleo da sua rotina diária, estruturado em 3 ciclos práticos (Fisiológico, Cognitivo e Comportamental) para desativar a sobrecarga mental de forma progressiva."],
   ["02", "Protocolo Noturno de Descompressão", "A rotina prática para aplicar antes de deitar, cessando o fluxo acelerado de pensamentos e preparando o corpo para o sono reparador."],
   ["03", "Guia Prático de Intervenção Rápida (Anti-Crise)", "Exercícios somáticos pontuais de 2 a 3 minutos para momentos em que surge o pico de estresse, bloqueio ou sobrecarga no dia a dia."],
-  ["04", "Fichas Diárias de Aplicação e Monitoramento", "Formato imprimível: as matrizes práticas para imprimir ou preencher digitalmente, acompanhando visualmente a execução dos exercícios e o alívio da sobrecarga ao longo dos 21 dias."],
+  ["04", "Fichas Diárias de Aplicação e Autoavaliação", "Formato imprimível: as matrizes práticas para imprimir ou preencher digitalmente, acompanhando a execução dos exercícios e a sua autoavaliação e o alívio da sobrecarga ao longo dos 21 dias."],
 ];
 const precos = [
   ["4 a 8 Sessões Terapêuticas Individuais", "R$ 800,00"],
@@ -85,7 +85,7 @@ function Index() {
             PROTOCOLO DIÁRIO DE 21 DIAS • 3 A 5 MINUTOS POR DIA
           </span>
           <h1 className="mx-auto mt-5 max-w-4xl text-3xl font-extrabold leading-tight text-forest md:text-5xl">
-            E se, em vez de passar noites em claro fritando de ansiedade, você pudesse desligar o alerta da cabeça em menos de 5 minutos?
+            E se, em vez de passar noites em claro com a mente acelerada e exausta pela ansiedade, você pudesse desligar o alerta da cabeça em menos de 5 minutos?
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-lg text-muted-foreground">
             Um plano de ação prático baseado em Neurociência Aplicada e Psicoterapia Positiva para cortar a ruminação mental, destravar as tensões do corpo e devolver a sua presença. Sem teorias cansativas.
@@ -186,8 +186,8 @@ function Index() {
         <div className="mx-auto max-w-2xl rounded-3xl bg-forest p-8 text-center text-primary-foreground shadow-2xl md:p-12">
           <p className="text-lg">Mas hoje você não vai pagar nem uma fração desse valor…</p>
           <p className="mt-6 text-sm uppercase tracking-widest opacity-80">Por apenas</p>
-          <p className="font-display text-5xl font-extrabold md:text-6xl">R$ 27,00 à vista no PIX</p>
-          <p className="mt-2 text-lg">ou em até <strong>3x de R$ 9,80</strong> no cartão de crédito</p>
+          <p className="font-display text-5xl font-extrabold md:text-6xl">R$ 39,90 à vista (PIX ou cartão)</p>
+          <p className="mt-2 text-lg">ou em até <strong>4x de R$ 10,86</strong> no cartão de crédito</p>
           <Cta className="pulse-soft mt-8 w-full">QUERO GARANTIR MEU ACESSO AGORA</Cta>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs font-semibold">
             <span className="flex items-center gap-1"><Lock className="h-4 w-4" /> Compra Segura</span>
