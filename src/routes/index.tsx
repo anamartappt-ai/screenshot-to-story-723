@@ -209,10 +209,10 @@ export function Index() {
             <div className="min-w-0">
               <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta</h2>
               <p className="mt-3 text-lg font-semibold text-authority-heading">Facilitadora do Grupo Terapêutico Viver Sem Ansiedade e Autora do Roteiro do Desarme Mental</p>
-              <p className="mt-4 text-sm leading-relaxed">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Leader Flow</p>
+              <p className="mt-4 text-sm leading-relaxed">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Lider Flow</p>
               <ul className="mt-7 space-y-5">
                 {[
-                  ["Formação com Referências Nacionais", "Dupla certificação em Psicoterapia Positiva com o Dr. Paulo de Tarso e com o Dr. Helder Kamei pelo Instituto Leader Flow."],
+                  ["Formação com Referências Nacionais", "Dupla certificação em Psicoterapia Positiva com o Dr. Paulo de Tarso e com o Dr. Helder Kamei pelo Instituto Lider Flow."],
                   ["Domínio de Sabotadores Mentais", "Especialização prática para identificar e desarmar os padrões mentais que sustentam a hipervigilância e a ruminação."],
                   ["Base na Neurociência Aplicada", "Intervenções estruturadas a partir da resposta neurofisiológica ao estresse crônico."],
                   ["Prática com Grupos Reais", 'Protocolo validado e refinado no acompanhamento prático do grupo "Viver Sem Ansiedade".'],
