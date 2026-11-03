@@ -199,15 +199,17 @@ export function Index() {
       </section>
 
       {/* FACILITADORA */}
-      <section className="bg-forest px-4 py-16 text-primary-foreground">
+      <section className="bg-gradient-to-b from-background via-authority-background to-sage px-4 py-16 text-authority-copy">
         <div className="mx-auto max-w-6xl">
-          <p className="mb-8 text-center text-sm font-semibold uppercase">Quem está por trás do método</p>
+          <p className="mb-8 text-center text-sm font-semibold uppercase text-authority-heading">Quem está por trás do método</p>
           <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
-            <img src={facilitadora.url} alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="mx-auto aspect-[3/4] w-full max-w-md rounded-lg object-cover" />
+            <div className="mx-auto w-full max-w-md rounded-xl border border-authority-border bg-authority-frame p-2">
+              <img src={facilitadora.url} alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
+            </div>
             <div className="min-w-0">
-              <h2 className="text-4xl font-extrabold md:text-5xl">Ana Marta</h2>
-              <p className="mt-3 text-lg font-semibold">Facilitadora do Grupo Terapêutico Viver Sem Ansiedade e Autora do Roteiro do Desarme Mental</p>
-              <p className="mt-4 text-sm leading-relaxed text-primary-foreground/80">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Leader Flow</p>
+              <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta</h2>
+              <p className="mt-3 text-lg font-semibold text-authority-heading">Facilitadora do Grupo Terapêutico Viver Sem Ansiedade e Autora do Roteiro do Desarme Mental</p>
+              <p className="mt-4 text-sm leading-relaxed">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Leader Flow</p>
               <ul className="mt-7 space-y-5">
                 {[
                   ["Formação com Referências Nacionais", "Dupla certificação em Psicoterapia Positiva com o Dr. Paulo de Tarso e com o Dr. Helder Kamei pelo Instituto Leader Flow."],
@@ -217,11 +219,11 @@ export function Index() {
                 ].map(([title, description]) => (
                   <li key={title} className="flex items-start gap-3">
                     <Check className="mt-0.5 h-5 w-5 shrink-0 text-authority-check" />
-                    <p className="text-sm leading-relaxed"><strong className="block font-extrabold">{title}</strong><span className="text-primary-foreground/80">{description}</span></p>
+                    <p className="text-sm leading-relaxed"><strong className="block font-extrabold text-authority-heading">{title}</strong><span>{description}</span></p>
                   </li>
                 ))}
               </ul>
-              <blockquote className="mt-8 rounded-lg border border-primary-foreground/20 bg-authority-surface p-5 font-display text-lg leading-relaxed">
+              <blockquote className="mt-8 rounded-lg border border-authority-border bg-authority-surface p-5 font-display text-lg leading-relaxed text-authority-heading">
                 “Minha missão é entregar a você ferramentas práticas para que a sua mente volte a ser um lugar de paz, clareza e descanso, desarmando os sabotadores e o ciclo da sobrecarga mental dia após dia.”
               </blockquote>
             </div>
