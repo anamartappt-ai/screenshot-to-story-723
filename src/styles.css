@@ -30,6 +30,11 @@
   --color-warning-foreground: var(--warning-foreground);
   --color-authority-check: var(--authority-check);
   --color-authority-surface: var(--authority-surface);
+  --color-authority-background: var(--authority-background);
+  --color-authority-heading: var(--authority-heading);
+  --color-authority-copy: var(--authority-copy);
+  --color-authority-border: var(--authority-border);
+  --color-authority-frame: var(--authority-frame);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -77,8 +82,13 @@
   --background: oklch(0.975 0.01 70);
   --foreground: oklch(0.25 0.04 160);
   --forest: oklch(0.34 0.06 160);
-  --authority-check: oklch(0.82 0.13 155);
-  --authority-surface: oklch(0.99 0 0 / 8%);
+  --authority-background: oklch(0.965 0.015 85);
+  --authority-heading: oklch(0.39 0.045 135);
+  --authority-copy: oklch(0.43 0.025 125);
+  --authority-border: oklch(0.78 0.035 135 / 55%);
+  --authority-frame: oklch(0.945 0.02 85);
+  --authority-check: oklch(0.48 0.065 140);
+  --authority-surface: oklch(0.925 0.025 85 / 60%);
   --sage: oklch(0.95 0.04 150);
   --cta: oklch(0.56 0.13 155);
   --cta-foreground: oklch(0.99 0 0);
@@ -118,8 +128,13 @@
 }
 
 .dark {
-  --authority-check: oklch(0.82 0.13 155);
-  --authority-surface: oklch(0.99 0 0 / 8%);
+  --authority-background: oklch(0.24 0.02 135);
+  --authority-heading: oklch(0.87 0.04 135);
+  --authority-copy: oklch(0.82 0.02 125);
+  --authority-border: oklch(0.65 0.035 135 / 55%);
+  --authority-frame: oklch(0.28 0.025 85);
+  --authority-check: oklch(0.76 0.065 140);
+  --authority-surface: oklch(0.34 0.025 85 / 60%);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
