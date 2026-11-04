@@ -234,8 +234,9 @@ export function Index() {
       {/* FECHAMENTO FRANCO */}
       <section className="bg-sage px-4 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold text-forest md:text-4xl">Olha, vou ser bem direta com você...</h2>
+          <h2 className="text-3xl font-extrabold text-forest md:text-4xl">Sei exatamente como é carregar o peso do alerta mental constante.</h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed md:text-lg">
+            <p>Meu papel aqui não é te entregar teorias cansativas, mas sim um método prático e cientificamente embasado em Neurociência Aplicada e Psicologia Positiva para você recuperar a calma e o domínio da sua mente.</p>
             <p>Se você chegou até aqui, é porque a sobrecarga mental já passou do limite tolerável na sua rotina.</p>
             <p>Você sabe que não é apenas sobre relaxar ou fazer pausas que não resolvem.<br />É sobre resgatar a sua clareza, silenciar o excesso de ruído mental e ter de volta noites de sono que realmente descansam o corpo e a mente.</p>
             <p>Você não precisa continuar sustentando um estado de alerta diário que só consome a sua energia. Eu estruturei um caminho seguro, baseado na neurobiologia da ansiedade e em práticas integrativas simples de aplicar.</p>
