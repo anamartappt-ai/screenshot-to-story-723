@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck } from "lucide-react";
-import facilitadora from "@/assets/facilitadora.jpeg.asset.json";
 
 const HOTMART_URL = "https://pay.hotmart.com/P108316406G";
 
