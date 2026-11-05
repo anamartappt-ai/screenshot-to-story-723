@@ -100,7 +100,7 @@ export function Index() {
             <div className="order-1 flex justify-center lg:order-none">
               <div className="relative">
                <img
-                src="https://i.postimg.cc/qBDCYpKc/Whats-App-Image-2026-10-23-at-07-40-07.jpg"
+                src="/facilitadora.jpg"
                 alt="Facilitadora do Roteiro do Desarme Mental"
                 width={768}
                 height={1024}
@@ -206,8 +206,7 @@ export function Index() {
               <img src="/facilitadora.jpg" alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
             </div>
             <div className="min-w-0">
-              <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta</h2>
-              <p className="mt-3 text-lg font-semibold text-authority-heading">Facilitadora do Grupo Terapêutico Viver Sem Ansiedade e Autora do Roteiro do Desarme Mental</p>
+              <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta | Terapeuta Integrativa</h2>
               <p className="mt-4 text-sm leading-relaxed">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Lider Flow</p>
               <ul className="mt-7 space-y-5">
                 {[
