@@ -204,7 +204,7 @@ export function Index() {
           <p className="mb-8 text-center text-sm font-semibold uppercase text-authority-heading">Quem está por trás do método</p>
           <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
             <div className="mx-auto w-full max-w-md rounded-xl border border-authority-border bg-authority-frame p-2">
-              <img src={facilitadora.url} alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
+              <img src="/facilitadora.jpg" alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
             </div>
             <div className="min-w-0">
               <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta</h2>
