@@ -99,13 +99,13 @@ export function Index() {
             </div>
             <div className="order-1 flex justify-center lg:order-none">
               <div className="relative">
-                <img
-                  src="/facilitadora.jpg"
-                  alt="Facilitadora do Roteiro do Desarme Mental"
-                  width={768}
-                  height={1024}
-                  className="aspect-square w-72 max-w-full rounded-full border-8 border-card object-cover shadow-2xl md:w-96 lg:w-[420px]"
-                />
+               <img
+                src="https://i.postimg.cc/qBDCYpKc/Whats-App-Image-2026-10-23-at-07-40-07.jpg"
+                alt="Facilitadora do Roteiro do Desarme Mental"
+                width={768}
+                height={1024}
+                className="aspect-square w-72 max-w-full rounded-full border-8 border-card object-cover shadow-2xl mdw-96 lg:w-[420px]"
+              />
                 <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-forest px-4 py-1.5 text-xs font-extrabold tracking-wide text-primary-foreground shadow-lg">
                   Sua facilitadora no Desarme Mental
                 </span>
