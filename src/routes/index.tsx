@@ -101,7 +101,7 @@ export function Index() {
             <div className="order-1 flex justify-center lg:order-none">
               <div className="relative">
                 <img
-                  src={facilitadora.url}
+                  src="/facilitadora.jpg"
                   alt="Facilitadora do Roteiro do Desarme Mental"
                   width={768}
                   height={1024}
