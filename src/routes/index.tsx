@@ -2,12 +2,26 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatBRL, marketTotal, masterclass, offer } from "@/lib/offer";
+import { getRequestOrigin } from "@/lib/origin.functions";
 
 const HOTMART_URL = offer.checkoutUrl;
 
+const FALLBACK_ORIGIN = "https://screenshot-to-story-723.lovable.app";
+
 export const Route = createFileRoute("/")({
-  head: () => ({
+  loader: async () => {
+    try {
+      return { origin: await getRequestOrigin() };
+    } catch {
+      return { origin: FALLBACK_ORIGIN };
+    }
+  },
+  head: ({ loaderData }) => ({
     meta: [
+      { property: "og:image", content: `${loaderData?.origin ?? FALLBACK_ORIGIN}/og-image.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: `${loaderData?.origin ?? FALLBACK_ORIGIN}/og-image.jpg` },
       { title: "O Roteiro do Desarme Mental — Protocolo Diário de 21 Dias" },
       { name: "description", content: "Desligue o alerta da cabeça em menos de 5 minutos por dia. Protocolo prático de 21 dias em PDF, com garantia de 7 dias." },
       { property: "og:title", content: "O Roteiro do Desarme Mental — 21 Dias" },
