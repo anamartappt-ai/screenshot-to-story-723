@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck } from "lucide-react";
+import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, Gift } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { formatBRL, marketTotal, offer } from "@/lib/offer";
 
-const HOTMART_URL = "https://pay.hotmart.com/P108316406G";
+const HOTMART_URL = offer.checkoutUrl;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,11 +50,10 @@ const entregaveis = [
   ["04", "Fichas Diárias de Aplicação e Autoavaliação", "Formato imprimível: as matrizes práticas para imprimir ou preencher digitalmente, acompanhando a execução dos exercícios e a sua autoavaliação e o alívio da sobrecarga ao longo dos 21 dias."],
 ];
 const precos = [
-  ["4 a 8 Sessões Terapêuticas Individuais", "R$ 800,00"],
-  ["Cursos e Treinamentos Teóricos de Ansiedade", "R$ 297,00"],
-  ["Livros de Neurociência e Autoajuda", "R$ 180,00"],
-  ["O Roteiro Completo do Desarme Mental (21 Dias)", "R$ 147,00"],
-  ["Protocolo Noturno + Guia Anti-Crise + Fichas Diárias", "R$ 197,00"],
+  "Livros técnicos e cursos teóricos sobre controle da ansiedade",
+  "Protocolos avulsos e guias pontuais de respiração e relaxamento",
+  "O Roteiro do Desarme Mental (Passo a passo de 21 dias com micropráticas somáticas de 5 min)",
+  "PRESENTE EXCLUSIVO: Acesso à Masterclass Terapêutica Ao Vivo com prática somática guiada + Grupo VIP de suporte e avisos no WhatsApp",
 ];
 const faq = [
   ["Quanto tempo vou precisar por dia?", "Apenas de 3 a 5 minutos. O protocolo foi pensado para caber em rotinas corridas, sem exigir horas de meditação."],
@@ -78,7 +79,7 @@ export function Index() {
       </div>
 
       {/* HERO */}
-      <section className="bg-gradient-to-b from-sage to-background px-4 pb-16 pt-10">
+      <section id="hero" className="bg-gradient-to-b from-sage to-background px-4 pb-16 pt-10">
         <div className="mx-auto max-w-6xl text-center">
           <span className="inline-block rounded-full bg-forest px-4 py-1.5 text-xs font-extrabold tracking-wider text-primary-foreground">
             PROTOCOLO DIÁRIO DE 21 DIAS • 3 A 5 MINUTOS POR DIA
@@ -167,15 +168,17 @@ export function Index() {
 
       {/* PREÇOS */}
       <section className="px-4 py-16">
-        <h2 className="text-center text-3xl font-extrabold text-forest md:text-4xl">Recapitulando… Quanto tudo isso deveria custar?</h2>
+        <h2 className="text-center text-3xl font-extrabold text-forest md:text-4xl">Quanto custaria buscar essas respostas por outros caminhos?</h2>
+        <p className="mx-auto mt-3 max-w-3xl text-center text-muted-foreground">Entenda a diferença entre investir meses procurando soluções dispersas e ter um método prático e organizado em mãos.</p>
         <div className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-2xl bg-card shadow-lg">
-          {precos.map(([t, v]) => (
-            <div key={t} className="flex items-center justify-between gap-4 border-b px-5 py-4">
-              <span className="text-sm font-semibold">{t}</span><span className="whitespace-nowrap text-muted-foreground line-through">{v}</span>
+          {precos.map((t, index) => (
+            <div key={t} className={`flex flex-col gap-3 border-b px-5 py-4 sm:flex-row sm:items-center sm:justify-between ${index === 3 ? "bg-sage" : ""}`}>
+              <span className="text-sm font-semibold">{t}</span>
+              <span className="shrink-0 text-sm sm:text-right"><span className="whitespace-nowrap text-muted-foreground line-through">{formatBRL(offer.marketValues[index] ?? 0)}</span>{index === 3 && <strong className="mt-1 block text-forest">HOJE: GRATUITO</strong>}</span>
             </div>
           ))}
           <div className="flex items-center justify-between gap-4 bg-blush px-5 py-4 font-extrabold">
-            <span>TOTAL REAL DE TUDO ISSO</span><span className="whitespace-nowrap text-destructive line-through">R$ 1.621,00</span>
+            <span>TOTAL ESTIMADO DE MERCADO</span><span className="whitespace-nowrap text-destructive line-through">{formatBRL(marketTotal)}</span>
           </div>
         </div>
       </section>
@@ -183,17 +186,23 @@ export function Index() {
       {/* OFERTA */}
       <section className="px-4 pb-16">
         <div className="mx-auto max-w-2xl rounded-3xl bg-forest p-8 text-center text-primary-foreground shadow-2xl md:p-12">
-          <p className="text-lg">Mas hoje você não vai pagar nem uma fração desse valor…</p>
+          <p className="text-lg">Você não pagará nada próximo a isso.</p>
           <p className="mt-6 text-sm uppercase tracking-widest opacity-80">Por apenas</p>
-           <p className="font-display text-5xl font-extrabold md:text-6xl">R$ 39,90</p>
+           <p className="font-display text-5xl font-extrabold md:text-6xl">{formatBRL(offer.price)}</p>
            <p className="mt-2 text-lg">à vista (PIX ou cartão)</p>
           <p className="mt-2 text-lg">ou em até <strong>4x de R$ 10,86</strong> no cartão de crédito</p>
-          <Cta className="pulse-soft mt-8 w-full">QUERO GARANTIR MEU ACESSO AGORA</Cta>
+          <Cta className="pulse-soft mt-8 w-full">QUERO DESARMAR MINHA MENTE AGORA</Cta>
+          <p className="mt-5 text-sm leading-relaxed text-primary-foreground/90">Aviso: O Roteiro do Desarme Mental é um recurso psicoeducativo e terapêutico integrativo voltado para autorregulação e alívio do estresse diário. Não substitui consulta, diagnóstico ou acompanhamento psiquiátrico/psicológico clínico.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs font-semibold">
             <span className="flex items-center gap-1"><Lock className="h-4 w-4" /> Compra Segura</span>
             <span className="flex items-center gap-1"><Mail className="h-4 w-4" /> Envio Imediato no E-mail</span>
             <span className="flex items-center gap-1"><ShieldCheck className="h-4 w-4" /> Garantia de 7 Dias</span>
           </div>
+        </div>
+        <div className="mx-auto mt-6 max-w-2xl rounded-lg border border-authority-border bg-authority-surface p-6 text-authority-copy md:p-8">
+          <h3 className="flex items-start gap-3 text-xl font-extrabold text-authority-heading"><Gift className="mt-1 h-6 w-6 shrink-0 text-authority-check" />Presente Especial ao Garantir o Seu E-book Hoje:</h3>
+          <p className="mt-4 leading-relaxed">Ao adquirir o Roteiro do Desarme Mental por {formatBRL(offer.price)}, você ganha acesso exclusivo à nossa próxima Masterclass Terapêutica Ao Vivo. Na aula ao vivo, faremos uma vivência prática guiada de descompressão somática.</p>
+          <p className="mt-3 leading-relaxed">Você receberá o link de acesso direto e todas as orientações dentro do nosso Grupo Oficial no WhatsApp.</p>
         </div>
       </section>
 
@@ -232,14 +241,12 @@ export function Index() {
       {/* FECHAMENTO FRANCO */}
       <section className="bg-sage px-4 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold text-forest md:text-4xl">Sei exatamente como é carregar o peso do alerta mental constante.</h2>
+          <h2 className="text-3xl font-extrabold text-forest md:text-4xl">Cuidar da sua mente é o primeiro passo para viver com equilíbrio e clareza.</h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed md:text-lg">
-            <p>Meu papel aqui não é te entregar teorias cansativas, mas sim um método prático e cientificamente embasado em Neurociência Aplicada e Psicologia Positiva para você recuperar a calma e o domínio da sua mente.</p>
-            <p>Se você chegou até aqui, é porque a sobrecarga mental já passou do limite tolerável na sua rotina.</p>
-            <p>Você sabe que não é apenas sobre relaxar ou fazer pausas que não resolvem.<br />É sobre resgatar a sua clareza, silenciar o excesso de ruído mental e ter de volta noites de sono que realmente descansam o corpo e a mente.</p>
-            <p>Você não precisa continuar sustentando um estado de alerta diário que só consome a sua energia. Eu estruturei um caminho seguro, baseado na neurobiologia da ansiedade e em práticas integrativas simples de aplicar.</p>
-            <p className="font-semibold text-forest">Você está pronta para desarmar esse ciclo de sobrecarga mental e recuperar a calma e o foco ao longo dos próximos 21 dias?</p>
-            <p>Se sim, clique no botão abaixo e garanta seu acesso ao Roteiro do Desarme Mental.</p>
+            <p>O meu papel aqui não é entregar teorias cansativas, mas sim um método prático e cientificamente embasado em Neurociência Aplicada e Psicologia Positiva para fortalecer o seu bem-estar e recuperar o domínio da sua mente.</p>
+            <p>Se você chegou até aqui, seja para prevenir o desgaste do dia a dia ou porque já começou a sentir os impactos da rotina acelerada, este espaço foi pensado para você. Não se trata apenas de relaxar ou de fazer pausas pontuais; trata-se de resgatar a clareza, reduzir o ruído mental e voltar a ter noites de sono verdadeiramente reparadoras.</p>
+            <p>Você não precisa continuar sustentando um estado de alerta constante que desgasta a sua energia. Estruturei um caminho seguro, fundamentado na neurobiologia do estresse e da ansiedade, aliado a práticas integrativas simples de aplicar na rotina.</p>
+            <p className="font-semibold text-forest">Está pronta para desarmar as tensões diárias e cultivar serenidade e foco ao longo dos próximos 21 dias?</p>
           </div>
           <Cta className="mt-8">Quero Desarmar Minha Mente Agora</Cta>
           <p className="mt-4 text-sm text-muted-foreground">Apenas R$ 39,90 à vista ou em até 4x de R$ 10,86 no cartão</p>
@@ -298,6 +305,9 @@ export function Index() {
       <footer className="bg-forest px-4 py-8 text-center text-xs text-primary-foreground/80">
         © {new Date().getFullYear()} O Roteiro do Desarme Mental. Este produto não substitui acompanhamento médico ou psicológico.
       </footer>
+      <Button variant="outline" className="fixed bottom-4 right-4 z-50 gap-2 border-authority-border bg-background text-forest shadow-lg" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}>
+        <ArrowUp aria-hidden="true" /> Voltar ao início
+      </Button>
     </div>
   );
 }
