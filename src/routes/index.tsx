@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, Gift } from "lucide-react";
+import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatBRL, marketTotal, offer } from "@/lib/offer";
+import { formatBRL, marketTotal, masterclass, offer } from "@/lib/offer";
 
 const HOTMART_URL = offer.checkoutUrl;
 
@@ -52,8 +52,8 @@ const entregaveis = [
 const precos = [
   "Livros técnicos e cursos teóricos sobre controle da ansiedade",
   "Protocolos avulsos e guias pontuais de respiração e relaxamento",
-  "O Roteiro do Desarme Mental (Passo a passo de 21 dias com micropráticas somáticas de 5 min)",
-  "PRESENTE EXCLUSIVO: Acesso à Masterclass Terapêutica Ao Vivo com prática somática guiada + Grupo VIP de suporte e avisos no WhatsApp",
+  "O Roteiro Completo do Desarme Mental (21 dias com micropráticas somáticas de 5 min)",
+  "Diário de Registro e Rastreamento de Gatilhos e Tensões Diárias",
 ];
 const faq = [
   ["Quanto tempo vou precisar por dia?", "Apenas de 3 a 5 minutos. O protocolo foi pensado para caber em rotinas corridas, sem exigir horas de meditação."],
@@ -172,9 +172,9 @@ export function Index() {
         <p className="mx-auto mt-3 max-w-3xl text-center text-muted-foreground">Entenda a diferença entre investir meses procurando soluções dispersas e ter um método prático e organizado em mãos.</p>
         <div className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-2xl bg-card shadow-lg">
           {precos.map((t, index) => (
-            <div key={t} className={`flex flex-col gap-3 border-b px-5 py-4 sm:flex-row sm:items-center sm:justify-between ${index === 3 ? "bg-sage" : ""}`}>
+            <div key={t} className="flex flex-col gap-3 border-b px-5 py-4 last:border-b-0 sm:flex-row sm:items-center sm:justify-between">
               <span className="text-sm font-semibold">{t}</span>
-              <span className="shrink-0 text-sm sm:text-right"><span className="whitespace-nowrap text-muted-foreground line-through">{formatBRL(offer.marketValues[index] ?? 0)}</span>{index === 3 && <strong className="mt-1 block text-forest">HOJE: GRATUITO</strong>}</span>
+              <span className="shrink-0 whitespace-nowrap text-sm text-muted-foreground line-through sm:text-right">{formatBRL(offer.marketValues[index] ?? 0)}</span>
             </div>
           ))}
           <div className="flex items-center justify-between gap-4 bg-blush px-5 py-4 font-extrabold">
@@ -200,9 +200,12 @@ export function Index() {
           </div>
         </div>
         <div className="mx-auto mt-6 max-w-2xl rounded-lg border border-authority-border bg-authority-surface p-6 text-authority-copy md:p-8">
-          <h3 className="flex items-start gap-3 text-xl font-extrabold text-authority-heading"><Gift className="mt-1 h-6 w-6 shrink-0 text-authority-check" />Presente Especial ao Garantir o Seu E-book Hoje:</h3>
-          <p className="mt-4 leading-relaxed">Ao adquirir o Roteiro do Desarme Mental por {formatBRL(offer.price)}, você ganha acesso exclusivo à nossa próxima Masterclass Terapêutica Ao Vivo. Na aula ao vivo, faremos uma vivência prática guiada de descompressão somática.</p>
-          <p className="mt-3 leading-relaxed">Você receberá o link de acesso direto e todas as orientações dentro do nosso Grupo Oficial no WhatsApp.</p>
+          <h3 className="flex items-start gap-3 text-xl font-extrabold text-authority-heading"><MessageCircle className="mt-1 h-6 w-6 shrink-0 text-authority-check" />Participe também da nossa Masterclass Ao Vivo</h3>
+          <p className="mt-4 leading-relaxed">Caso deseje dar um passo a mais e vivenciar uma prática terapêutica juntos, você está convidada a participar da nossa próxima Masterclass Ao Vivo, que acontecerá no dia {masterclass.date} às {masterclass.time}.</p>
+          <p className="mt-3 leading-relaxed">No nosso grupo do WhatsApp compartilhamos todas as orientações e o link de acesso direto para a aula ao vivo.</p>
+          <a href={masterclass.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-cta mt-6 inline-flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-sm leading-snug sm:flex-row sm:px-8 sm:text-base sm:leading-normal">
+            <MessageCircle className="h-5 w-5 shrink-0" /> {masterclass.groupLabel}
+          </a>
         </div>
       </section>
 
