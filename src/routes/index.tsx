@@ -305,9 +305,11 @@ export function Index() {
       <footer className="bg-forest px-4 py-8 text-center text-xs text-primary-foreground/80">
         © {new Date().getFullYear()} O Roteiro do Desarme Mental. Este produto não substitui acompanhamento médico ou psicológico.
       </footer>
-      <Button variant="outline" className="fixed bottom-4 right-4 z-50 gap-2 border-authority-border bg-background text-forest shadow-lg" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}>
-        <ArrowUp aria-hidden="true" /> Voltar ao início
-      </Button>
+      <div className="flex justify-center bg-background px-4 py-5">
+        <Button variant="outline" className="gap-2 border-authority-border text-forest" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}>
+          <ArrowUp aria-hidden="true" /> Voltar ao início
+        </Button>
+      </div>
     </div>
   );
 }
