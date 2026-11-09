@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 - Leads go to the `leads` table via anon insert-only RLS; no public reads.
 - Keep the sales page sections in the index route and share one checkout CTA so all purchase links remain consistent.
+- Keep offer amounts and checkout destination in a shared browser-safe offer module so displayed totals and tested business rules use the same values.
