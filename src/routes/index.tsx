@@ -203,8 +203,8 @@ export function Index() {
           <h3 className="flex items-start gap-3 text-xl font-extrabold text-authority-heading"><MessageCircle className="mt-1 h-6 w-6 shrink-0 text-authority-check" />Participe também da nossa Masterclass Ao Vivo</h3>
           <p className="mt-4 leading-relaxed">Caso deseje dar um passo a mais e vivenciar uma prática terapêutica juntos, você está convidada a participar da nossa próxima Masterclass Ao Vivo, que acontecerá no dia {masterclass.date} às {masterclass.time}.</p>
           <p className="mt-3 leading-relaxed">No nosso grupo do WhatsApp compartilhamos todas as orientações e o link de acesso direto para a aula ao vivo.</p>
-          <a href={masterclass.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-cta mt-6 inline-flex w-full items-center justify-center gap-2 sm:w-auto">
-            <MessageCircle className="h-5 w-5" /> {masterclass.groupLabel}
+          <a href={masterclass.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-cta mt-6 inline-flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-sm leading-snug sm:flex-row sm:px-8 sm:text-base sm:leading-normal">
+            <MessageCircle className="h-5 w-5 shrink-0" /> {masterclass.groupLabel}
           </a>
         </div>
       </section>
