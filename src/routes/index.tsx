@@ -2,33 +2,27 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatBRL, marketTotal, masterclass, offer } from "@/lib/offer";
-import { getRequestOrigin } from "@/lib/origin.functions";
 
 const HOTMART_URL = offer.checkoutUrl;
-
-const FALLBACK_ORIGIN = "https://screenshot-to-story-723.lovable.app";
+const SITE_URL = "https://roteiro.anamartasaudemental.com.br/";
+const SHARE_IMAGE_URL = `${SITE_URL}og-image.jpg`;
 
 export const Route = createFileRoute("/")({
-  loader: async () => {
-    try {
-      return { origin: await getRequestOrigin() };
-    } catch {
-      return { origin: FALLBACK_ORIGIN };
-    }
-  },
-  head: ({ loaderData }) => ({
+  head: () => ({
     meta: [
-      { property: "og:image", content: `${loaderData?.origin ?? FALLBACK_ORIGIN}/og-image.jpg` },
+      { property: "og:image", content: SHARE_IMAGE_URL },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { name: "twitter:image", content: `${loaderData?.origin ?? FALLBACK_ORIGIN}/og-image.jpg` },
+      { name: "twitter:image", content: SHARE_IMAGE_URL },
       { title: "O Roteiro do Desarme Mental — Protocolo Diário de 21 Dias" },
       { name: "description", content: "Desligue o alerta da cabeça em menos de 5 minutos por dia. Protocolo prático de 21 dias em PDF, com garantia de 7 dias." },
       { property: "og:title", content: "O Roteiro do Desarme Mental — 21 Dias" },
       { property: "og:description", content: "Plano prático de 3 a 5 minutos por dia para cortar a ruminação mental e dormir melhor." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: Index,
 });
@@ -115,7 +109,7 @@ export function Index() {
             <div className="order-1 flex justify-center lg:order-none">
               <div className="relative">
                <img
-                src="/facilitadora.jpg"
+                src="/ana-marta.jpg"
                 alt="Facilitadora do Roteiro do Desarme Mental"
                 width={768}
                 height={1024}
@@ -229,7 +223,7 @@ export function Index() {
           <p className="mb-8 text-center text-sm font-semibold uppercase text-authority-heading">Quem está por trás do método</p>
           <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
             <div className="mx-auto w-full max-w-md rounded-xl border border-authority-border bg-authority-frame p-2">
-              <img src="/facilitadora.jpg" alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
+              <img src="/ana-marta.jpg" alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
             </div>
             <div className="min-w-0">
               <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta | Terapeuta Integrativa</h2>
