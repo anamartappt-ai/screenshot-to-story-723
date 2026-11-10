@@ -128,7 +128,7 @@ export function Index() {
           </div>
 
           <div className="mt-10">
-            <Cta className="pulse-soft text-lg">QUERO COMEÇAR AGORA</Cta>
+            <Cta className="pulse-soft text-lg">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
             <p className="mt-3 text-center text-xs text-muted-foreground">Compra 100% segura • Acesso vitalício • Garantia incondicional de 7 dias</p>
           </div>
         </div>
@@ -199,7 +199,7 @@ export function Index() {
            <p className="font-display text-5xl font-extrabold md:text-6xl">{formatBRL(offer.price)}</p>
            <p className="mt-2 text-lg">à vista (PIX ou cartão)</p>
           <p className="mt-2 text-lg">ou em até <strong>4x de R$ 10,86</strong> no cartão de crédito</p>
-          <Cta className="pulse-soft mt-8 w-full">QUERO DESARMAR MINHA MENTE AGORA</Cta>
+          <Cta className="pulse-soft mt-8 w-full">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
           <p className="mt-5 text-sm leading-relaxed text-primary-foreground/90">Aviso: O Roteiro do Desarme Mental é um recurso psicoeducativo e terapêutico integrativo voltado para autorregulação e alívio do estresse diário. Não substitui consulta, diagnóstico ou acompanhamento psiquiátrico/psicológico clínico.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs font-semibold">
             <span className="flex items-center gap-1"><Lock className="h-4 w-4" /> Compra Segura</span>
@@ -259,7 +259,7 @@ export function Index() {
             <p>Você não precisa continuar sustentando um estado de alerta constante que desgasta a sua energia. Estruturei um caminho seguro, fundamentado na neurobiologia do estresse e da ansiedade, aliado a práticas integrativas simples de aplicar na rotina.</p>
             <p className="font-semibold text-forest">Está pronta para desarmar as tensões diárias e cultivar serenidade e foco ao longo dos próximos 21 dias?</p>
           </div>
-          <Cta className="mt-8">Quero Desarmar Minha Mente Agora</Cta>
+          <Cta className="mt-8">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
           <p className="mt-4 text-sm text-muted-foreground">Apenas R$ 39,90 à vista ou em até 4x de R$ 10,86 no cartão</p>
         </div>
       </section>
@@ -310,7 +310,7 @@ export function Index() {
             </details>
           ))}
         </div>
-        <div className="mt-10 text-center"><Cta>QUERO DESARMAR MINHA MENTE AGORA</Cta></div>
+        <div className="mt-10 text-center"><Cta>ACESSAR O ROTEIRO DO DESARME MENTAL</Cta></div>
       </section>
 
       <footer className="bg-forest px-4 py-8 text-center text-xs text-primary-foreground/80">
