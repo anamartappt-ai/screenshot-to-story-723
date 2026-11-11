@@ -8,3 +8,4 @@
 - [x] Add three-step purchase delivery section.
 - [x] Verify checkout destinations and smartphone readability.
 - [ ] Add institutional Instagram link when its address is provided.
+- [x] Atualizar bio e autoridade da Ana Marta com tom ético, acolhedor e sem promessas irreais.
