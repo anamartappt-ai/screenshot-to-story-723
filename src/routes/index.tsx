@@ -231,9 +231,9 @@ export function Index() {
               <ul className="mt-7 space-y-5">
                 {[
                   ["Formação com Referências Nacionais", "Dupla certificação em Psicoterapia Positiva com o Dr. Paulo de Tarso e com o Dr. Helder Kamei pelo Instituto Lider Flow."],
-                  ["Domínio de Sabotadores Mentais", "Especialização prática para identificar e desarmar os padrões mentais que sustentam a hipervigilância e a ruminação."],
+                  ["Domínio de Sabotadores Mentais", "Ferramentas práticas para reconhecer e desacelerar padrões mentais automáticos que alimentam a ruminação e o desgaste emocional."],
                   ["Base na Neurociência Aplicada", "Intervenções estruturadas a partir da resposta neurofisiológica ao estresse crônico."],
-                  ["Prática com Grupos Reais", 'Protocolo validado e refinado no acompanhamento prático do grupo "Viver Sem Ansiedade".'],
+                  ["Experiência Prática no Acompanhamento de Grupos", 'Exercícios e ferramentas aprimorados a partir do acompanhamento e da escuta de pessoas reais no grupo "Viver Sem Ansiedade".'],
                 ].map(([title, description]) => (
                   <li key={title} className="flex items-start gap-3">
                     <Check className="mt-0.5 h-5 w-5 shrink-0 text-authority-check" />
@@ -242,7 +242,7 @@ export function Index() {
                 ))}
               </ul>
               <blockquote className="mt-8 rounded-lg border border-authority-border bg-authority-surface p-5 font-display text-lg leading-relaxed text-authority-heading">
-                “Minha missão é entregar a você ferramentas práticas para que a sua mente volte a ser um lugar de paz, clareza e descanso, desarmando os sabotadores e o ciclo da sobrecarga mental dia após dia.”
+                “Minha missão é oferecer a você ferramentas práticas para compreender o seu ritmo interno, organizar o excesso de pensamentos e construir dias com mais presença, clareza e respiro.”
               </blockquote>
             </div>
           </div>
