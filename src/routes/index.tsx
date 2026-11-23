@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, MessageCircle, Video, Gift } from "lucide-react";
+import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatBRL, marketTotal, offer } from "@/lib/offer";
 
 const HOTMART_URL = offer.checkoutUrl;
 const SITE_URL = "https://roteiro.anamartasaudemental.com.br/";
 const SHARE_IMAGE_URL = `${SITE_URL}og-image.jpg`;
-const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/GxM7OgqYGidJGI9YutkFBF?s=cl&p=a&iam=2";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,8 +56,8 @@ const entregaveis = [
   ["02", "Protocolo Noturno de Descompressão", "A rotina prática para aplicar antes de deitar, cessando o fluxo acelerado de pensamentos e preparando o corpo para o sono reparador."],
   ["03", "Guia Prático de Intervenção Rápida (Anti-Crise)", "Exercícios somáticos pontuais de 2 a 3 minutos para momentos em que surge o pico de estresse, bloqueio ou sobrecarga no dia a dia."],
   ["04", "Fichas Diárias de Aplicação e Autoavaliação", "Formato imprimível: as matrizes práticas para imprimir ou preencher digitalmente, acompanhando a execução dos exercícios e a sua autoavaliação e o alívio da sobrecarga ao longo dos 21 dias."],
-  ["05", "Masterclass Ao Vivo “O Equilíbrio é Possível”", "Encontro ao vivo no dia 14/12, às 19h30, pelo Google Meet, com vivência terapêutica prática conduzida por Ana Marta. O link de acesso é compartilhado diretamente no grupo Viver Sem Ansiedade."],
-  ["06", "Presente de Acolhimento (E-book Gratuito)", "Ao garantir seu acesso e entrar no grupo Viver Sem Ansiedade no WhatsApp, você recebe gratuitamente um e-book de presente para aprofundar suas práticas de equilíbrio e autorregulação."],
+  ["05", "Masterclass Ao Vivo “O Equilíbrio é Possível”", "Encontro ao vivo no dia 14/12, às 19h30, pelo Google Meet, com uma prática terapêutica conduzida por Ana Marta. Ao confirmar sua compra, você entra no grupo Viver Sem Ansiedade para receber todas as informações e orientações do encontro."],
+  ["06", "Presente Surpresa de Acolhimento", "Um presente especial preparado para acolher quem participar da Masterclass Ao Vivo e aprofundar a sua jornada de equilíbrio e autorregulação."],
 ];
 const precos = [
   "Livros técnicos e cursos teóricos sobre controle da ansiedade",
@@ -68,8 +67,8 @@ const precos = [
 ];
 const faq = [
   ["Quanto tempo vou precisar por dia?", "Apenas de 3 a 5 minutos. O protocolo foi pensado para caber em rotinas corridas, sem exigir horas de meditação."],
-  ["Como vou receber o material?", "Logo após a confirmação do pagamento, você recebe o acesso completo no seu e-mail. Na página de confirmação, você também encontra o botão para entrar no grupo Viver Sem Ansiedade e receber o link da Masterclass Ao Vivo e o seu Presente de Acolhimento."],
-  ["Quando acontece a Masterclass Ao Vivo?", "O encontro ao vivo “O Equilíbrio é Possível” acontece no dia 14/12, às 19h30, pelo Google Meet, com vivência prática. O link da sala é enviado dentro do grupo do WhatsApp."],
+  ["Como vou receber o material?", "Logo após a confirmação do pagamento, você recebe o acesso completo no seu e-mail. Na página de confirmação, você também encontra o botão para entrar no grupo Viver Sem Ansiedade, onde receberá todas as informações da Masterclass Ao Vivo."],
+  ["Quando acontece a Masterclass Ao Vivo?", "O encontro ao vivo “O Equilíbrio é Possível” acontece no dia 14/12, às 19h30, pelo Google Meet, com uma prática terapêutica guiada. Todas as informações, orientações e o link da sala são enviados dentro do grupo Viver Sem Ansiedade."],
   ["Preciso ter experiência com meditação ou terapia?", "Não. Os exercícios são simples, guiados passo a passo e feitos para qualquer pessoa aplicar desde o primeiro dia."],
   ["Posso ler no celular?", "Sim! O material funciona no celular, tablet ou computador, e você também pode imprimir as fichas se preferir."],
   ["E se eu não gostar?", "Você tem 7 dias de garantia incondicional. Se aplicar e não sentir alívio, devolvemos 100% do seu dinheiro, sem perguntas."],
@@ -87,7 +86,7 @@ export function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="bg-forest px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground">
-        <Zap className="mr-1 inline h-4 w-4" /> Acesso imediato no e-mail + Bônus Masterclass Ao Vivo dia 14/12 às 19h30 (Google Meet).
+        <Zap className="mr-1 inline h-4 w-4" /> Condição promocional por tempo limitado + Masterclass Ao Vivo dia 14/12 às 19h30 (Google Meet).
       </div>
 
       {/* HERO */}
@@ -166,7 +165,7 @@ export function Index() {
       {/* ENTREGÁVEIS */}
       <section className="bg-sage px-4 py-16">
         <h2 className="text-center text-3xl font-extrabold text-forest md:text-4xl">Tudo incluso no produto</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">Ao garantir o seu acesso, estes 6 componentes e bônus já fazem parte do seu pacote, sem nada escondido:</p>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">Ao garantir o seu acesso, estes 6 itens já fazem parte do seu pacote completo, sem nada escondido:</p>
         <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2">
           {entregaveis.map(([n, t, d]) => (
             <div key={n} className="rounded-2xl bg-card p-6 shadow-md">
@@ -199,10 +198,12 @@ export function Index() {
       <section className="px-4 pb-16">
         <div className="mx-auto max-w-2xl rounded-3xl bg-forest p-8 text-center text-primary-foreground shadow-2xl md:p-12">
           <p className="text-lg">Você não pagará nada próximo a isso.</p>
-          <p className="mt-6 text-sm uppercase tracking-widest opacity-80">Por apenas</p>
-          <p className="font-display text-5xl font-extrabold md:text-6xl">{formatBRL(offer.price)}</p>
+          <p className="mt-5 text-base opacity-85">
+            De <span className="line-through">{formatBRL(offer.originalPrice)}</span> por apenas
+          </p>
+          <p className="mt-1 font-display text-5xl font-extrabold md:text-6xl">{formatBRL(offer.price)}</p>
           <p className="mt-2 text-lg">à vista (PIX ou cartão)</p>
-          <p className="mt-2 text-lg">ou em até <strong>4x de R$ 10,86</strong> no cartão de crédito</p>
+          <p className="mt-1 text-base opacity-90">ou em até <strong>{offer.installmentsText}</strong> no cartão de crédito</p>
           <Cta className="pulse-soft mt-8 w-full">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
           <p className="mt-5 text-sm leading-relaxed text-primary-foreground/90">Aviso: O Roteiro do Desarme Mental é um recurso psicoeducativo e terapêutico integrativo voltado para autorregulação e alívio do estresse diário. Não substitui consulta, diagnóstico ou acompanhamento psiquiátrico/psicológico clínico.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-xs font-semibold">
@@ -210,26 +211,6 @@ export function Index() {
             <span className="flex items-center gap-1"><Mail className="h-4 w-4" /> Envio Imediato no E-mail</span>
             <span className="flex items-center gap-1"><ShieldCheck className="h-4 w-4" /> Garantia de 7 Dias</span>
           </div>
-        </div>
-
-        {/* CARD MASTERCLASS AO VIVO + PRESENTE DE ACOLHIMENTO */}
-        <div className="mx-auto mt-6 max-w-2xl rounded-lg border border-authority-border bg-authority-surface p-6 text-authority-copy md:p-8">
-          <h3 className="flex items-start gap-3 text-xl font-extrabold text-authority-heading">
-            <Video className="mt-1 h-6 w-6 shrink-0 text-authority-check" />
-            Bônus Exclusivo: Masterclass Ao Vivo “O Equilíbrio é Possível”
-          </h3>
-          <p className="mt-4 leading-relaxed">
-            Ao garantir o seu Roteiro, você também participa gratuitamente da nossa próxima <strong>Masterclass Ao Vivo “O Equilíbrio é Possível”</strong>, que acontecerá no dia <strong>14/12, às 19h30, pelo Google Meet</strong>, com uma vivência terapêutica prática conduzida ao vivo.
-          </p>
-          <p className="mt-3 flex items-start gap-2 leading-relaxed">
-            <Gift className="mt-1 h-5 w-5 shrink-0 text-authority-check" />
-            <span>
-              No nosso grupo <strong>Viver Sem Ansiedade</strong> no WhatsApp compartilhamos o link exclusivo da sala ao vivo, as orientações e o seu <strong>Presente de Acolhimento</strong> (e-book gratuito).
-            </span>
-          </p>
-          <a href={WHATSAPP_GROUP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta mt-6 inline-flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-sm leading-snug sm:flex-row sm:px-8 sm:text-base sm:leading-normal">
-            <MessageCircle className="h-5 w-5 shrink-0" /> Entrar no Grupo Viver sem Ansiedade
-          </a>
         </div>
       </section>
 
@@ -276,7 +257,9 @@ export function Index() {
             <p className="font-semibold text-forest">Está pronta para desarmar as tensões diárias e cultivar serenidade e foco ao longo dos próximos 21 dias?</p>
           </div>
           <Cta className="mt-8">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
-          <p className="mt-4 text-sm text-muted-foreground">Apenas R$ 39,90 à vista ou em até 4x de R$ 10,86 no cartão</p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            De <span className="line-through">{formatBRL(offer.originalPrice)}</span> por apenas {formatBRL(offer.price)} à vista ou em até {offer.installmentsText} no cartão
+          </p>
         </div>
       </section>
 
@@ -287,7 +270,7 @@ export function Index() {
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               { icon: Mail, title: "ACESSE SEU E-MAIL", description: "Assim que o seu pagamento for confirmado, você receberá um e-mail oficial da Hotmart com as instruções imediatas de acesso ao seu protocolo." },
-              { icon: FileDown, title: "ENTRE NO GRUPO E GARANTA A LIVE", description: "Na página de confirmação, toque no botão para entrar no grupo Viver Sem Ansiedade e receber o link da Masterclass Ao Vivo (14/12 às 19h30) e seu Presente de Acolhimento." },
+              { icon: FileDown, title: "ENTRE NO GRUPO DA MASTERCLASS", description: "Na página de confirmação, toque no botão para entrar no grupo Viver Sem Ansiedade e receber todas as informações da Masterclass Ao Vivo (14/12 às 19h30)." },
               { icon: CircleCheck, title: "TUDO PRONTO!", description: "Agora é só seguir os passos diários de poucos minutos para desativar a sobrecarga mental e recuperar a sua tranquilidade." },
             ].map(({ icon: Icon, title, description }, index) => (
               <div key={title} className="rounded-lg border bg-background p-6">
