@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, MessageCircle } from "lucide-react";
+import { Check, ShieldCheck, Lock, Mail, ChevronDown, AlertTriangle, Zap, Wind, PenLine, HeartHandshake, MoonStar, FileDown, CircleCheck, ArrowUp, MessageCircle, Video, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatBRL, marketTotal, masterclass, offer } from "@/lib/offer";
+import { formatBRL, marketTotal, offer } from "@/lib/offer";
 
 const HOTMART_URL = offer.checkoutUrl;
 const SITE_URL = "https://roteiro.anamartasaudemental.com.br/";
 const SHARE_IMAGE_URL = `${SITE_URL}og-image.jpg`;
+const WHATSAPP_GROUP_URL = "https://chat.whatsapp.com/GxM7OgqYGidJGI9YutkFBF?s=cl&p=a&iam=2";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image:height", content: "630" },
       { name: "twitter:image", content: SHARE_IMAGE_URL },
       { title: "O Roteiro do Desarme Mental — Protocolo Diário de 21 Dias" },
-      { name: "description", content: "Desligue o alerta da cabeça em menos de 5 minutos por dia. Protocolo prático de 21 dias em PDF, com garantia de 7 dias." },
+      { name: "description", content: "Desligue o alerta da cabeça em menos de 5 minutos por dia. Protocolo prático de 21 dias em PDF + Masterclass Ao Vivo dia 14/12 às 19h30." },
       { property: "og:title", content: "O Roteiro do Desarme Mental — 21 Dias" },
       { property: "og:description", content: "Plano prático de 3 a 5 minutos por dia para cortar a ruminação mental e dormir melhor." },
       { property: "og:type", content: "website" },
@@ -56,6 +57,8 @@ const entregaveis = [
   ["02", "Protocolo Noturno de Descompressão", "A rotina prática para aplicar antes de deitar, cessando o fluxo acelerado de pensamentos e preparando o corpo para o sono reparador."],
   ["03", "Guia Prático de Intervenção Rápida (Anti-Crise)", "Exercícios somáticos pontuais de 2 a 3 minutos para momentos em que surge o pico de estresse, bloqueio ou sobrecarga no dia a dia."],
   ["04", "Fichas Diárias de Aplicação e Autoavaliação", "Formato imprimível: as matrizes práticas para imprimir ou preencher digitalmente, acompanhando a execução dos exercícios e a sua autoavaliação e o alívio da sobrecarga ao longo dos 21 dias."],
+  ["05", "Masterclass Ao Vivo “O Equilíbrio é Possível”", "Encontro ao vivo no dia 14/12, às 19h30, pelo Google Meet, com vivência terapêutica prática conduzida por Ana Marta. O link de acesso é compartilhado diretamente no grupo Viver Sem Ansiedade."],
+  ["06", "Presente de Acolhimento (E-book Gratuito)", "Ao garantir seu acesso e entrar no grupo Viver Sem Ansiedade no WhatsApp, você recebe gratuitamente um e-book de presente para aprofundar suas práticas de equilíbrio e autorregulação."],
 ];
 const precos = [
   "Livros técnicos e cursos teóricos sobre controle da ansiedade",
@@ -65,7 +68,8 @@ const precos = [
 ];
 const faq = [
   ["Quanto tempo vou precisar por dia?", "Apenas de 3 a 5 minutos. O protocolo foi pensado para caber em rotinas corridas, sem exigir horas de meditação."],
-  ["Como vou receber o material?", "Logo após a confirmação do pagamento, você recebe o acesso completo no seu e-mail. O acesso é imediato."],
+  ["Como vou receber o material?", "Logo após a confirmação do pagamento, você recebe o acesso completo no seu e-mail. Na página de confirmação, você também encontra o botão para entrar no grupo Viver Sem Ansiedade e receber o link da Masterclass Ao Vivo e o seu Presente de Acolhimento."],
+  ["Quando acontece a Masterclass Ao Vivo?", "O encontro ao vivo “O Equilíbrio é Possível” acontece no dia 14/12, às 19h30, pelo Google Meet, com vivência prática. O link da sala é enviado dentro do grupo do WhatsApp."],
   ["Preciso ter experiência com meditação ou terapia?", "Não. Os exercícios são simples, guiados passo a passo e feitos para qualquer pessoa aplicar desde o primeiro dia."],
   ["Posso ler no celular?", "Sim! O material funciona no celular, tablet ou computador, e você também pode imprimir as fichas se preferir."],
   ["E se eu não gostar?", "Você tem 7 dias de garantia incondicional. Se aplicar e não sentir alívio, devolvemos 100% do seu dinheiro, sem perguntas."],
@@ -83,7 +87,7 @@ export function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="bg-forest px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground">
-        <Zap className="mr-1 inline h-4 w-4" /> Acesso imediato: receba o seu protocolo completo no e-mail logo após a confirmação.
+        <Zap className="mr-1 inline h-4 w-4" /> Acesso imediato no e-mail + Bônus Masterclass Ao Vivo dia 14/12 às 19h30 (Google Meet).
       </div>
 
       {/* HERO */}
@@ -108,13 +112,13 @@ export function Index() {
             </div>
             <div className="order-1 flex justify-center lg:order-none">
               <div className="relative">
-               <img
-                src="/ana-marta.jpg"
-                alt="Facilitadora do Roteiro do Desarme Mental"
-                width={768}
-                height={1024}
-                className="aspect-square w-72 max-w-full rounded-full border-8 border-card object-cover shadow-2xl mdw-96 lg:w-[420px]"
-              />
+                <img
+                  src="/ana-marta.jpg"
+                  alt="Facilitadora do Roteiro do Desarme Mental"
+                  width={768}
+                  height={1024}
+                  className="aspect-square w-72 max-w-full rounded-full border-8 border-card object-cover shadow-2xl md:w-96 lg:w-[420px]"
+                />
                 <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-forest px-4 py-1.5 text-xs font-extrabold tracking-wide text-primary-foreground shadow-lg">
                   Sua facilitadora no Desarme Mental
                 </span>
@@ -162,7 +166,7 @@ export function Index() {
       {/* ENTREGÁVEIS */}
       <section className="bg-sage px-4 py-16">
         <h2 className="text-center text-3xl font-extrabold text-forest md:text-4xl">Tudo incluso no produto</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">Ao garantir o seu acesso, estes 4 componentes práticos já fazem parte do seu pacote, sem nada escondido:</p>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">Ao garantir o seu acesso, estes 6 componentes e bônus já fazem parte do seu pacote, sem nada escondido:</p>
         <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2">
           {entregaveis.map(([n, t, d]) => (
             <div key={n} className="rounded-2xl bg-card p-6 shadow-md">
@@ -196,8 +200,8 @@ export function Index() {
         <div className="mx-auto max-w-2xl rounded-3xl bg-forest p-8 text-center text-primary-foreground shadow-2xl md:p-12">
           <p className="text-lg">Você não pagará nada próximo a isso.</p>
           <p className="mt-6 text-sm uppercase tracking-widest opacity-80">Por apenas</p>
-           <p className="font-display text-5xl font-extrabold md:text-6xl">{formatBRL(offer.price)}</p>
-           <p className="mt-2 text-lg">à vista (PIX ou cartão)</p>
+          <p className="font-display text-5xl font-extrabold md:text-6xl">{formatBRL(offer.price)}</p>
+          <p className="mt-2 text-lg">à vista (PIX ou cartão)</p>
           <p className="mt-2 text-lg">ou em até <strong>4x de R$ 10,86</strong> no cartão de crédito</p>
           <Cta className="pulse-soft mt-8 w-full">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
           <p className="mt-5 text-sm leading-relaxed text-primary-foreground/90">Aviso: O Roteiro do Desarme Mental é um recurso psicoeducativo e terapêutico integrativo voltado para autorregulação e alívio do estresse diário. Não substitui consulta, diagnóstico ou acompanhamento psiquiátrico/psicológico clínico.</p>
@@ -207,134 +211,20 @@ export function Index() {
             <span className="flex items-center gap-1"><ShieldCheck className="h-4 w-4" /> Garantia de 7 Dias</span>
           </div>
         </div>
+
+        {/* CARD MASTERCLASS AO VIVO + PRESENTE DE ACOLHIMENTO */}
         <div className="mx-auto mt-6 max-w-2xl rounded-lg border border-authority-border bg-authority-surface p-6 text-authority-copy md:p-8">
-          <h3 className="flex items-start gap-3 text-xl font-extrabold text-authority-heading"><MessageCircle className="mt-1 h-6 w-6 shrink-0 text-authority-check" />Participe também da nossa Masterclass Ao Vivo</h3>
-          <p className="mt-4 leading-relaxed">Caso deseje dar um passo a mais e vivenciar uma prática terapêutica juntos, você está convidada a participar da nossa próxima Masterclass Ao Vivo, que acontecerá no dia {masterclass.date} às {masterclass.time}.</p>
-          <p className="mt-3 leading-relaxed">No nosso grupo do WhatsApp compartilhamos todas as orientações e o link de acesso direto para a aula ao vivo.</p>
-          <a href={masterclass.whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-cta mt-6 inline-flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-sm leading-snug sm:flex-row sm:px-8 sm:text-base sm:leading-normal">
-            <MessageCircle className="h-5 w-5 shrink-0" /> {masterclass.groupLabel}
-          </a>
-        </div>
-      </section>
-
-      {/* FACILITADORA */}
-      <section className="bg-gradient-to-b from-background via-authority-background to-sage px-4 py-16 text-authority-copy">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-8 text-center text-sm font-semibold uppercase text-authority-heading">Quem está por trás do método</p>
-          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
-            <div className="mx-auto w-full max-w-md rounded-xl border border-authority-border bg-authority-frame p-2">
-              <img src="/ana-marta.jpg" alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
-            </div>
-            <div className="min-w-0">
-              <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta | Terapeuta Integrativa</h2>
-              <p className="mt-4 text-sm leading-relaxed">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Lider Flow</p>
-              <ul className="mt-7 space-y-5">
-                {[
-                  ["Formação com Referências Nacionais", "Dupla certificação em Psicoterapia Positiva com o Dr. Paulo de Tarso e com o Dr. Helder Kamei pelo Instituto Lider Flow."],
-                  ["Domínio de Sabotadores Mentais", "Ferramentas práticas para reconhecer e desacelerar padrões mentais automáticos que alimentam a ruminação e o desgaste emocional."],
-                  ["Base na Neurociência Aplicada", "Intervenções estruturadas a partir da resposta neurofisiológica ao estresse crônico."],
-                  ["Experiência Prática no Acompanhamento de Grupos", 'Exercícios e ferramentas aprimorados a partir do acompanhamento e da escuta de pessoas reais no grupo "Viver Sem Ansiedade".'],
-                ].map(([title, description]) => (
-                  <li key={title} className="flex items-start gap-3">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-authority-check" />
-                    <p className="text-sm leading-relaxed"><strong className="block font-extrabold text-authority-heading">{title}</strong><span>{description}</span></p>
-                  </li>
-                ))}
-              </ul>
-              <blockquote className="mt-8 rounded-lg border border-authority-border bg-authority-surface p-5 font-display text-lg leading-relaxed text-authority-heading">
-                “Minha missão é oferecer a você ferramentas práticas para compreender o seu ritmo interno, organizar o excesso de pensamentos e construir dias com mais presença, clareza e respiro.”
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FECHAMENTO FRANCO */}
-      <section className="bg-sage px-4 py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-extrabold text-forest md:text-4xl">Cuidar da sua mente é o primeiro passo para viver com equilíbrio e clareza.</h2>
-          <div className="mt-8 space-y-5 text-base leading-relaxed md:text-lg">
-            <p>O meu papel aqui não é entregar teorias cansativas, mas sim um método prático e cientificamente embasado em Neurociência Aplicada e Psicologia Positiva para fortalecer o seu bem-estar e recuperar o domínio da sua mente.</p>
-            <p>Se você chegou até aqui, seja para prevenir o desgaste do dia a dia ou porque já começou a sentir os impactos da rotina acelerada, este espaço foi pensado para você. Não se trata apenas de relaxar ou de fazer pausas pontuais; trata-se de resgatar a clareza, reduzir o ruído mental e voltar a ter noites de sono verdadeiramente reparadoras.</p>
-            <p>Você não precisa continuar sustentando um estado de alerta constante que desgasta a sua energia. Estruturei um caminho seguro, fundamentado na neurobiologia do estresse e da ansiedade, aliado a práticas integrativas simples de aplicar na rotina.</p>
-            <p className="font-semibold text-forest">Está pronta para desarmar as tensões diárias e cultivar serenidade e foco ao longo dos próximos 21 dias?</p>
-          </div>
-          <Cta className="mt-8">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
-          <p className="mt-4 text-sm text-muted-foreground">Apenas R$ 39,90 à vista ou em até 4x de R$ 10,86 no cartão</p>
-        </div>
-      </section>
-
-      {/* ENTREGA */}
-      <section className="bg-card px-4 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="mx-auto max-w-3xl text-center text-3xl font-extrabold text-forest md:text-4xl">Compre agora e receba seu acesso no e-mail imediatamente!</h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              { icon: Mail, title: "ACESSE SEU E-MAIL", description: "Assim que o seu pagamento for confirmado, você receberá um e-mail oficial da Hotmart com as instruções imediatas de acesso." },
-              { icon: FileDown, title: "BAIXE O ROTEIRO COMPLETO", description: "Você recebe o arquivo oficial do Roteiro de 21 Dias, o Protocolo Noturno, o Guia de Intervenção Rápida e as Fichas de Aplicação para começar hoje mesmo." },
-              { icon: CircleCheck, title: "TUDO PRONTO!", description: "Agora é só seguir os passos diários de poucos minutos para desativar a sobrecarga mental e recuperar a sua tranquilidade." },
-            ].map(({ icon: Icon, title, description }, index) => (
-              <div key={title} className="rounded-lg border bg-background p-6">
-                <div className="flex items-center justify-between"><Icon className="h-8 w-8 text-cta" /><span className="font-display text-3xl text-muted-foreground/50">0{index + 1}</span></div>
-                <h3 className="mt-5 font-sans text-base font-extrabold text-forest">{title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GARANTIA */}
-      <section className="bg-sage px-4 py-16">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 md:flex-row">
-          <div className="flex h-40 w-40 shrink-0 flex-col items-center justify-center rounded-full border-8 border-cta bg-card text-forest shadow-xl">
-            <span className="font-display text-5xl font-extrabold">7</span><span className="text-xs font-extrabold">DIAS DE GARANTIA</span>
-          </div>
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl font-extrabold text-forest">Garantia blindada de 7 dias</h2>
-            <p className="mt-3 text-muted-foreground">Aplique o protocolo por 7 dias. Se você não sentir alívio no sono e no corpo, basta enviar uma mensagem e devolvemos 100% do seu dinheiro, de forma total e imediata. O risco é todo nosso.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="px-4 py-16">
-        <h2 className="text-center text-3xl font-extrabold text-forest md:text-4xl">Perguntas frequentes</h2>
-        <div className="mx-auto mt-10 max-w-3xl space-y-3">
-          {faq.map(([q, a]) => (
-            <details key={q} className="group rounded-2xl bg-blush p-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold">
-                {q}<ChevronDown className="h-5 w-5 shrink-0 transition group-open:rotate-180" />
-              </summary>
-              <p className="mt-3 text-muted-foreground">{a}</p>
-            </details>
-          ))}
-        </div>
-        <div className="mt-10 text-center"><Cta>ACESSAR O ROTEIRO DO DESARME MENTAL</Cta></div>
-      </section>
-
-      <footer className="bg-forest px-4 py-8 text-center text-xs text-primary-foreground/80">
-        © {new Date().getFullYear()} O Roteiro do Desarme Mental. Este produto não substitui acompanhamento médico ou psicológico.
-      </footer>
-      <div className="flex justify-center bg-background px-4 py-5">
-        <Button variant="outline" className="gap-2 border-authority-border text-forest" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}>
-          <ArrowUp aria-hidden="true" /> Voltar ao início
-        </Button>
-      </div>
-    </div>
-  );
-}
-
-function PilarCard({ icon: Icon, titulo, texto }: { icon: typeof Wind; titulo: string; texto: string }) {
-  return (
-    <div className="flex items-start gap-3 rounded-2xl bg-card p-4 text-left shadow-md">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sage text-forest">
-        <Icon className="h-5 w-5" />
-      </span>
-      <div>
-        <h3 className="font-sans text-sm font-extrabold text-forest">{titulo}</h3>
-        <p className="mt-1 text-xs text-muted-foreground">{texto}</p>
-      </div>
-    </div>
-  );
-}
+          <h3 className="flex items-start gap-3 text-xl font-extrabold text-authority-heading">
+            <Video className="mt-1 h-6 w-6 shrink-0 text-authority-check" />
+            Bônus Exclusivo: Masterclass Ao Vivo “O Equilíbrio é Possível”
+          </h3>
+          <p className="mt-4 leading-relaxed">
+            Ao garantir o seu Roteiro, você também participa gratuitamente da nossa próxima <strong>Masterclass Ao Vivo “O Equilíbrio é Possível”</strong>, que acontecerá no dia <strong>14/12, às 19h30, pelo Google Meet</strong>, com uma vivência terapêutica prática conduzida ao vivo.
+          </p>
+          <p className="mt-3 flex items-start gap-2 leading-relaxed">
+            <Gift className="mt-1 h-5 w-5 shrink-0 text-authority-check" />
+            <span>
+              No nosso grupo <strong>Viver Sem Ansiedade</strong> no WhatsApp compartilhamos o link exclusivo da sala ao vivo, as orientações e o seu <strong>Presente de Acolhimento</strong> (e-book gratuito).
+            </span>
+          </p>
+          <a href
