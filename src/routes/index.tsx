@@ -227,4 +227,130 @@ export function Index() {
               No nosso grupo <strong>Viver Sem Ansiedade</strong> no WhatsApp compartilhamos o link exclusivo da sala ao vivo, as orientações e o seu <strong>Presente de Acolhimento</strong> (e-book gratuito).
             </span>
           </p>
-          <a href
+          <a href={WHATSAPP_GROUP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta mt-6 inline-flex w-full flex-col items-center justify-center gap-2 px-5 py-4 text-center text-sm leading-snug sm:flex-row sm:px-8 sm:text-base sm:leading-normal">
+            <MessageCircle className="h-5 w-5 shrink-0" /> Entrar no Grupo Viver sem Ansiedade
+          </a>
+        </div>
+      </section>
+
+      {/* FACILITADORA */}
+      <section className="bg-gradient-to-b from-background via-authority-background to-sage px-4 py-16 text-authority-copy">
+        <div className="mx-auto max-w-6xl">
+          <p className="mb-8 text-center text-sm font-semibold uppercase text-authority-heading">Quem está por trás do método</p>
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-12">
+            <div className="mx-auto w-full max-w-md rounded-xl border border-authority-border bg-authority-frame p-2">
+              <img src="/ana-marta.jpg" alt="Ana Marta, autora do Roteiro do Desarme Mental" width={768} height={1024} loading="lazy" className="aspect-[3/4] w-full rounded-lg object-cover" />
+            </div>
+            <div className="min-w-0">
+              <h2 className="text-4xl font-extrabold text-authority-heading md:text-5xl">Ana Marta | Terapeuta Integrativa</h2>
+              <p className="mt-4 text-sm leading-relaxed">Terapeuta Integrativa | Pós-graduada em Neurociência Aplicada ao Aprendizado | Especialista em Psicoterapia Positiva, Sabotadores Mentais e Desenvolvimento Pessoal pelo Instituto Lider Flow</p>
+              <ul className="mt-7 space-y-5">
+                {[
+                  ["Formação com Referências Nacionais", "Dupla certificação em Psicoterapia Positiva com o Dr. Paulo de Tarso e com o Dr. Helder Kamei pelo Instituto Lider Flow."],
+                  ["Domínio de Sabotadores Mentais", "Ferramentas práticas para reconhecer e desacelerar padrões mentais automáticos que alimentam a ruminação e o desgaste emocional."],
+                  ["Base na Neurociência Aplicada", "Intervenções estruturadas a partir da resposta neurofisiológica ao estresse crônico."],
+                  ["Experiência Prática no Acompanhamento de Grupos", 'Exercícios e ferramentas aprimorados a partir do acompanhamento e da escuta de pessoas reais no grupo "Viver Sem Ansiedade".'],
+                ].map(([title, description]) => (
+                  <li key={title} className="flex items-start gap-3">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-authority-check" />
+                    <p className="text-sm leading-relaxed"><strong className="block font-extrabold text-authority-heading">{title}</strong><span>{description}</span></p>
+                  </li>
+                ))}
+              </ul>
+              <blockquote className="mt-8 rounded-lg border border-authority-border bg-authority-surface p-5 font-display text-lg leading-relaxed text-authority-heading">
+                “Minha missão é oferecer a você ferramentas práticas para compreender o seu ritmo interno, organizar o excesso de pensamentos e construir dias com mais presença, clareza e respiro.”
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FECHAMENTO FRANCO */}
+      <section className="bg-sage px-4 py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-extrabold text-forest md:text-4xl">Cuidar da sua mente é o primeiro passo para viver com equilíbrio e clareza.</h2>
+          <div className="mt-8 space-y-5 text-base leading-relaxed md:text-lg">
+            <p>O meu papel aqui não é entregar teorias cansativas, mas sim um método prático e cientificamente embasado em Neurociência Aplicada e Psicologia Positiva para fortalecer o seu bem-estar e recuperar o domínio da sua mente.</p>
+            <p>Se você chegou até aqui, seja para prevenir o desgaste do dia a dia ou porque já começou a sentir os impactos da rotina acelerada, este espaço foi pensado para você. Não se trata apenas de relaxar ou de fazer pausas pontuais; trata-se de resgatar a clareza, reduzir o ruído mental e voltar a ter noites de sono verdadeiramente reparadoras.</p>
+            <p>Você não precisa continuar sustentando um estado de alerta constante que desgasta a sua energia. Estruturei um caminho seguro, fundamentado na neurobiologia do estresse e da ansiedade, aliado a práticas integrativas simples de aplicar na rotina.</p>
+            <p className="font-semibold text-forest">Está pronta para desarmar as tensões diárias e cultivar serenidade e foco ao longo dos próximos 21 dias?</p>
+          </div>
+          <Cta className="mt-8">ACESSAR O ROTEIRO DO DESARME MENTAL</Cta>
+          <p className="mt-4 text-sm text-muted-foreground">Apenas R$ 39,90 à vista ou em até 4x de R$ 10,86 no cartão</p>
+        </div>
+      </section>
+
+      {/* ENTREGA */}
+      <section className="bg-card px-4 py-16">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mx-auto max-w-3xl text-center text-3xl font-extrabold text-forest md:text-4xl">Compre agora e receba seu acesso no e-mail imediatamente!</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              { icon: Mail, title: "ACESSE SEU E-MAIL", description: "Assim que o seu pagamento for confirmado, você receberá um e-mail oficial da Hotmart com as instruções imediatas de acesso ao seu protocolo." },
+              { icon: FileDown, title: "ENTRE NO GRUPO E GARANTA A LIVE", description: "Na página de confirmação, toque no botão para entrar no grupo Viver Sem Ansiedade e receber o link da Masterclass Ao Vivo (14/12 às 19h30) e seu Presente de Acolhimento." },
+              { icon: CircleCheck, title: "TUDO PRONTO!", description: "Agora é só seguir os passos diários de poucos minutos para desativar a sobrecarga mental e recuperar a sua tranquilidade." },
+            ].map(({ icon: Icon, title, description }, index) => (
+              <div key={title} className="rounded-lg border bg-background p-6">
+                <div className="flex items-center justify-between"><Icon className="h-8 w-8 text-cta" /><span className="font-display text-3xl text-muted-foreground/50">0{index + 1}</span></div>
+                <h3 className="mt-5 font-sans text-base font-extrabold text-forest">{title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GARANTIA */}
+      <section className="bg-sage px-4 py-16">
+        <div className="mx-auto flex max-w-4xl flex-col items-center gap-8 md:flex-row">
+          <div className="flex h-40 w-40 shrink-0 flex-col items-center justify-center rounded-full border-8 border-cta bg-card text-forest shadow-xl">
+            <span className="font-display text-5xl font-extrabold">7</span><span className="text-xs font-extrabold">DIAS DE GARANTIA</span>
+          </div>
+          <div className="text-center md:text-left">
+            <h2 className="text-3xl font-extrabold text-forest">Garantia blindada de 7 dias</h2>
+            <p className="mt-3 text-muted-foreground">Aplique o protocolo por 7 dias. Se você não sentir alívio no sono e no corpo, basta enviar uma mensagem e devolvemos 100% do seu dinheiro, de forma total e imediata. O risco é todo nosso.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-4 py-16">
+        <h2 className="text-center text-3xl font-extrabold text-forest md:text-4xl">Perguntas frequentes</h2>
+        <div className="mx-auto mt-10 max-w-3xl space-y-3">
+          {faq.map(([q, a]) => (
+            <details key={q} className="group rounded-2xl bg-blush p-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-extrabold">
+                {q}<ChevronDown className="h-5 w-5 shrink-0 transition group-open:rotate-180" />
+              </summary>
+              <p className="mt-3 text-muted-foreground">{a}</p>
+            </details>
+          ))}
+        </div>
+        <div className="mt-10 text-center"><Cta>ACESSAR O ROTEIRO DO DESARME MENTAL</Cta></div>
+      </section>
+
+      <footer className="bg-forest px-4 py-8 text-center text-xs text-primary-foreground/80">
+        © {new Date().getFullYear()} O Roteiro do Desarme Mental. Este produto não substitui acompanhamento médico ou psicológico.
+      </footer>
+      <div className="flex justify-center bg-background px-4 py-5">
+        <Button variant="outline" className="gap-2 border-authority-border text-forest" onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}>
+          <ArrowUp aria-hidden="true" /> Voltar ao início
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+function PilarCard({ icon: Icon, titulo, texto }: { icon: typeof Wind; titulo: string; texto: string }) {
+  return (
+    <div className="flex items-start gap-3 rounded-2xl bg-card p-4 text-left shadow-md">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sage text-forest">
+        <Icon className="h-5 w-5" />
+      </span>
+      <div>
+        <h3 className="font-sans text-sm font-extrabold text-forest">{titulo}</h3>
+        <p className="mt-1 text-xs text-muted-foreground">{texto}</p>
+      </div>
+    </div>
+  );
+}
