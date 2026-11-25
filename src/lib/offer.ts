@@ -2,7 +2,7 @@ export const offer = {
   originalPrice: 19.9,
   price: 9.9,
   installmentsText: "3x de R$ 3,53",
-  checkoutUrl: "https://pay.hotmart.com/P108316406G",
+  checkoutUrl: "https://pay.hotmart.com/P108316406G?off=oj3ee7ip&checkoutMode=10",
   marketValues: [397, 147, 97, 67],
 };
 
